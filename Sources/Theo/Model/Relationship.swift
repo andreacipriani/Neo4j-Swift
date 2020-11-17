@@ -379,7 +379,7 @@ extension Array where Element: Relationship {
                 print("Could neither find nodeId or node for toNode - please report this bug")
             }
 
-            if relationship.direction == .to {
+            if relationship.direction == .from {
                 createQueries.append("(`\(fromNodeAlias)`)-[\(`relationshipAlias`):`\(relationship.type)`\(params)]->(`\(toNodeAlias)`)")
             } else {
                 createQueries.append("(`\(fromNodeAlias)`)<-[\(`relationshipAlias`):`\(relationship.type)`\(params)]-(`\(toNodeAlias)`)")
